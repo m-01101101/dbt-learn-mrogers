@@ -32,6 +32,5 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 models:
   dbt Learn-mrogers:
-      # Applies to all files under models/example/
-      example:
-          materialized: view
+    # staging:
+    #     materialized: view
