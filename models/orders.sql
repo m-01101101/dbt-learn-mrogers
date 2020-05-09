@@ -16,7 +16,7 @@ with stg_orders as (
         orderID
         , created_at
         , sum(amount) amount 
-        , listagg(paymentMethod, ', ') paymentMethods
+        , listagg(distinct paymentMethod, ', ') paymentMethods
     from {{ ref('stg_stripe_payments') }}
     {{ dbt_utils.group_by(n=2) }}
 )
