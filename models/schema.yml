@@ -8,13 +8,17 @@ sources:
       - name: customers
 
   - name: stripe
+    description: >
+      record of stripe payments 
+      -- TODO understand why error when calling columns explcitilly [Invalid identifier]
     database: raw
     tables:
       - name: payment
 
 models:
   - name: customers
-    description: One record per customer
+    description: > 
+      One record per customer. Detailing, first order date, most recent order date and total life time orders.
     columns:
       - name: customer_id
         description: Primary key
@@ -23,6 +27,15 @@ models:
           - not_null
       - name: first_order_date
         description: NULL when a customer has not yet placed an order.
+
+  - name: orders
+    description: One record per order
+    columns:
+      - name: order_id
+        description: Primary key
+        tests:
+          - unique
+          - not_null
 
   - name: stg_customers
     description: This model cleans up customer data
