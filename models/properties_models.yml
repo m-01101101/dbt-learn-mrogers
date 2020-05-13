@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: dim_customers
-    description: "{{ doc('customers') }}"
+    description: "{{ doc('doc_customers') }}"
     columns:
       - name: customer_id
         description: Primary key
