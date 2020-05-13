@@ -9,9 +9,11 @@ with stg_orders as (
 )
 
 , payment_info as (
-    -- some orders have more than one row
-    -- all with the same created_at
-    -- amounts and paymentmethods may vary
+    /* 
+    some orders have more than one row in stripe table
+    all with the same created_at
+    amounts and paymentmethods may vary
+    */
     select
         orderID
         , created_at
