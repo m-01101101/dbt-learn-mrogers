@@ -1,6 +1,7 @@
 {{
     config (
-        materialized = 'table'
+        materialized = 'table',
+        sort = 'order_date'
     )
 }}
 
@@ -15,10 +16,10 @@ with stg_orders as (
     amounts and paymentmethods may vary
     */
     select
-        orderID
+        orderid
         , created_at
         , sum(amount) amount 
-        , listagg(distinct paymentMethod, ', ') paymentMethods
+        , listagg(distinct paymentmethod, ', ') paymentMethods
     from {{ ref('stg_stripe_payments') }}
     {{ dbt_utils.group_by(n=2) }}
 )
@@ -33,7 +34,7 @@ with stg_orders as (
         , paymentMethods
     from stg_orders
     left join payment_info
-        on stg_orders.order_id = payment_info.orderID
+        on stg_orders.order_id = payment_info.orderid
 )
 
 select * from orders

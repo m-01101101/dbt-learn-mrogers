@@ -1,6 +1,7 @@
 {{
     config (
-        materialized = 'table'
+        materialized = 'table',
+        sort = 'first_order_date'
     )
 }}
 
