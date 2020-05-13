@@ -1,20 +1,5 @@
 version: 2
 
-sources:
-  - name: jaffle_shop
-    database: raw
-    tables:
-      - name: orders
-      - name: customers
-
-  - name: stripe
-    description: >
-      record of stripe payments 
-      -- Note, columns can be case sensitive and require double quotes
-    database: raw
-    tables:
-      - name: payment
-
 models:
   - name: dim_customers
     description: > 
