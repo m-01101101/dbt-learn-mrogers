@@ -4,6 +4,6 @@
         , "orderID" orderid
         , "CREATED" created_at
         , "paymentMethod" paymentmethod
-        -- assume in cents
+        -- assumed dollars - jaffles be costly
         , "AMOUNT" amount
     from {{ source ('stripe', 'payment') }}
