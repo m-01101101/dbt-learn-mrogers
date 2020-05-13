@@ -1,4 +1,4 @@
-{% docs table_customers %}
+{% docs table_dim_customers %}
 This table contains one row per customers.
 
 Detailing their; 
