@@ -1,4 +1,4 @@
-{% docs table_dim_customers %}
+{% docs doc_customers %}
 One record per customer
 
 Detailing;
