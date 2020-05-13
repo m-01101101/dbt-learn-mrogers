@@ -1,4 +1,4 @@
-My dbt project in preparation for `dbt Learn`
+My dbt project in preparation for `dbt Learn` [slides](https://learn.getdbt.com/lessons/)
 
 
 ### Resources:
