@@ -16,7 +16,7 @@ sources:
       - name: payment
 
 models:
-  - name: fct_customers
+  - name: dim_customers
     description: > 
       One record per customer. Detailing, first order date, most recent order date and total life time orders.
     columns:
