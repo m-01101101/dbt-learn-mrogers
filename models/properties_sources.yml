@@ -15,7 +15,7 @@ sources:
       record of stripe payments 
       -- Note, columns can be case sensitive and require double quotes
     database: raw
-    freshness:
-      warn_after: {count: 12, period: hour}
+    # freshness:
+    #   warn_after: {count: 12, period: hour}
     tables:
       - name: payment
