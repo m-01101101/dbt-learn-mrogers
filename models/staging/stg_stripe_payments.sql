@@ -1,8 +1,9 @@
 
     select
         "ID" id 
-        , "orderID" orderID
+        , "orderID" orderid
         , "CREATED" created_at
-        , "paymentMethod" paymentMethod
+        , "paymentMethod" paymentmethod
+        -- assume in cents
         , "AMOUNT" amount
     from {{ source ('stripe', 'payment') }}
