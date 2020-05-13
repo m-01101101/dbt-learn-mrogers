@@ -2,8 +2,7 @@ version: 2
 
 models:
   - name: dim_customers
-    description: > 
-      One record per customer. Detailing, first order date, most recent order date and total life time orders.
+    description: "{{ doc('customers') }}"
     columns:
       - name: customer_id
         description: Primary key
@@ -43,3 +42,24 @@ models:
         tests:
           - accepted_values:
               values: ['placed', 'shipped', 'completed', 'return_pending', 'returned']
+
+  - name: tr_order_payment_method
+    description: One row per order, with a column per payment method 
+    columns: 
+      - name: order_id 
+        tests:
+          - unique 
+          - not_null 
+      - name: total_amount
+        description: total amount for the order in cents
+
+  - name: stg_stripe_payments
+    description: >
+      One row per order method for each order. Therefore orderid may appear multiple times
+    columns: 
+      - name: id 
+        tests:
+          - unique 
+          - not_null 
+      - name: amount
+        description: amount for the payment method in cents        

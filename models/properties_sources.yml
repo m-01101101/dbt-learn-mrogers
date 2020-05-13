@@ -2,6 +2,9 @@ version: 2
 
 sources:
   - name: jaffle_shop
+  # you can specify the schema, to change the schema easily
+  # name then acts as the alias
+  # - schema: 
     database: raw
     tables:
       - name: orders
