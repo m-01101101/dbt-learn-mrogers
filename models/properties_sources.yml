@@ -19,3 +19,11 @@ sources:
     #   warn_after: {count: 12, period: hour}
     tables:
       - name: payment
+
+  - name: snowplow
+    database: raw
+    loaded_at_field: collector_tstamp
+    freshness:
+      error_after: {count: 1, period: hour}
+    tables:
+      - name: event    
