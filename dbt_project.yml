@@ -37,3 +37,7 @@ models:
         materialized: view
     transform:
         materialized: view
+
+# define schema seed runs to 
+# seeds:
+#     schema: my_seeds        
